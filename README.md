@@ -30,5 +30,20 @@ Users interact with a virtual football object using a Snapchat Lens, which conne
 
 ---
 
-## 📂 Project Structure
-(Insert screenshot here)
+## 📸 Project Preview
+
+### 📁 Project Structure
+![Structure](./docs/images/structure.png)
+
+### 🚀 Backend Running
+![Server](./docs/images/server.png)
+
+### 🌐 API Response
+![API](./docs/images/api.png)
+
+
+## 📚 Documentation
+
+- [Setup Guide](./docs/setup.md)
+- [Backend Overview](./docs/backend.md)
+- [Architecture](./docs/architecture.md)
