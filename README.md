@@ -47,3 +47,8 @@ Users interact with a virtual football object using a Snapchat Lens, which conne
 - [Setup Guide](./docs/setup.md)
 - [Backend Overview](./docs/backend.md)
 - [Architecture](./docs/architecture.md)
+
+### 🔌 API Interaction
+
+![Postman](./docs/images/postman-request.png)
+![Response](./docs/images/api-response.png)
