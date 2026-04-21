@@ -52,3 +52,14 @@ Users interact with a virtual football object using a Snapchat Lens, which conne
 
 ![Postman](./docs/images/postman-request.png)
 ![Response](./docs/images/api-response.png)
+
+## 📸 Screenshots
+
+### API Working
+![Postman](images/postman-success.png)
+
+### Data Stored in DynamoDB
+![DynamoDB](images/dynamodb-data.png)
+
+### AWS Lambda Function
+![Lambda](images/lambda-overview.png)

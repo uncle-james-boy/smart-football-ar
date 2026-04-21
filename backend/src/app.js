@@ -1,3 +1,11 @@
+const AWS = require('aws-sdk');
+
+AWS.config.update({
+  region: 'af-south-1'
+});
+
+const lambda = new AWS.Lambda();
+
 const express = require("express");
 const app = express();
 
@@ -13,15 +21,27 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-app.use(express.json());
 
-app.post('/track-interaction', (req, res) => {
-    const { action, timestamp } = req.body;
+app.post('/track-interaction', async (req, res) => {
+  const payload = {
+      body: JSON.stringify(req.body)
+  };
 
-    console.log("User interaction:", action, timestamp);
+  const params = {
+      FunctionName: "trackInteractionFunction",
+      Payload: JSON.stringify(payload)
+  };
 
-    res.json({
-        message: "Interaction tracked successfully",
-        data: { action, timestamp }
+  try {
+      const result = await lambda.invoke(params).promise();
+
+      res.json({
+          message: "Sent to AWS Lambda",
+          lambdaResponse: JSON.parse(result.Payload)
+      });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Lambda invocation failed" });
+      }
     });
-});
+  
